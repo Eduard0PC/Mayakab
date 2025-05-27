@@ -23,11 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Usuario menu
 
-const toggleBtn = document.getElementById('menuToggle');
-const userPanel = document.querySelector('.user-panel');
-
-toggleBtn.addEventListener('click', () => {
-    userPanel.classList.toggle('open');
+document.getElementById('menuToggle').addEventListener('click', () => {
+    document.querySelector('.user-panel').classList.toggle('active');
 });
 
 //Editar valores
