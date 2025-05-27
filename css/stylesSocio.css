@@ -420,4 +420,62 @@ main {
     main {
         margin-left: 0;
     }
+        .logo-container {
+        margin-left: 0;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+
+    .dashboard {
+        padding: 20px 15px;
+    }
+
+    .dashboard-top {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card {
+        min-width: 100%;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-pic-container,
+    .user-panel .user-icon {
+        width: 140px;
+        height: 140px;
+    }
+
+    .edit-overlay {
+        width: 140px;
+        height: 140px;
+    }
+
+    .user-info-card form {
+        width: 100%;
+    }
+
+    .product-card .image-container {
+        height: 120px;
+    }
+
+    .bar-chart.vendidos {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .bar-chart.vendidos .bar {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .bar-chart.vendidos .bar span {
+        right: 5px;
+        top: 50%;
+    }
 }
