@@ -147,7 +147,7 @@ form{ width: 100%; }
         left: -250%;
         width: 300%;
         height: 100%;
-        background: #ee9826 ;
+        background: #632D41;
         border-radius: 150px;
         z-index: 2;
         transition: 1.8s ease-in-out;
@@ -198,7 +198,7 @@ form{ width: 100%; }
         width: 160px;
         height: 46px;
         background: transparent;
-        border: 2px solid #fff;
+        border: 2px solid #976666;
         box-shadow: none;
     }
 
@@ -254,13 +254,12 @@ form{ width: 100%; }
 }
 /* Estilos para el logo de bienvenida */
 .welcome-logo {
-    width: 180px;
-    height: auto;
+    width: 200px;
+    height: 200px;
     margin: -20px 0 45px 0; /* ↑ Mueve la imagen hacia arriba */
     display: block;
     border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    filter: brightness(0) invert(1);
 }
 /* Ajustes para móviles */
 @media screen and (max-width: 650px) {

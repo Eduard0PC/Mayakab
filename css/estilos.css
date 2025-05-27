@@ -25,10 +25,7 @@ body {
   z-index: 999;
 }
 
-/* Oculta al hacer scroll hacia abajo */
-.hide-navbar {
-  top: -100px;
-}
+
 /* Galería: efecto hover sutil */
 .galeria-item {
   overflow: hidden;
