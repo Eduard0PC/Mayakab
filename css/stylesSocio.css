@@ -47,6 +47,15 @@ header {
 
 }
 
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
 .logout-btn {
   padding: 10px 18px;
   background-color: #ff4d4d;
@@ -169,6 +178,64 @@ main {
   margin-top: -5px;
 }
 
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 160px;
+  margin-top: 10px;
+  padding: 0 10px;
+  border-top: 1px solid #ddd;
+}
+
+.bar {
+  background-color: #4caf50;
+  width: 24px;
+  height: 0;
+  border-radius: 5px 5px 0 0;
+  animation: growBar 1s ease-out forwards;
+  animation-delay: calc(var(--i, 1) * 0.05s);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.bar span {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #333;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.bar-chart.productos {
+  height: 180px;
+}
+
+.bar-chart.productos .bar {
+  background-color: #ff9800;
+}
+
+.bar-chart.productos .bar:hover {
+  background-color: #e68900;
+}
+
+.bar-chart.productos .bar span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 11px;
+  color: #444;
+  margin-top: 6px;
+}
+
+
+@keyframes growBar {
+  to {
+    height: var(--height);
+  }
+}
+
 /* PRODUCTOS */
 .productos-grid {
   display: grid;
@@ -181,13 +248,15 @@ main {
   border-radius: 12px;
   padding: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-align: center;
+  opacity: 1;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  opacity: 1;
 }
 
 .product-card img {
@@ -208,4 +277,30 @@ main {
   font-size: 13px;
   color: #666;
   margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+    margin-right: 15px;
+  }
+
+  .user-panel {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    height: calc(100vh - 70px);
+    width: 220px;
+    background: white;
+    transition: left 0.3s ease;
+    z-index: 1100;
+  }
+
+  .user-panel.open {
+    left: 0;
+  }
+
+  main {
+    margin-left: 0;
+  }
 }

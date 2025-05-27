@@ -1,64 +1,90 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="../../css/stylesSocio.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../../css/stylesSocio.css" />
 </head>
+
 <body>
-  <header>
-    <div class="logo-container">
-        <img src="../../img/logo.png" alt="Logo" class="logo" />
-        <span class="logo-text">MAYA KAB</span>
-    </div>
-    <button class="logout-btn">Cerrar sesión</button>
-  </header>
-  <main>
-    <aside class="user-panel">
-      <img src="../../img/user1.jpg" alt="Usuario" class="user-icon" />
-      <p>Nombre del Usuario: </p>
-      <p>Correo: </p>
-      <p>Contraseña: </p>
-    </aside>
-    <section class="dashboard">
-      <div class="dashboard-top">
-        <div class="card">
-          <h3>📊 Productos vendidos</h3>
-          <div class="barra"><span style="--valor: 70%"></span></div>
-          <p class="barra-info">70% vendidos (350 de 500)</p>
+    <header>
+        <div class="logo-container">
+            <img src="../../img/logo.png" alt="Logo" class="logo" />
+            <span class="logo-text">MAYA KAB</span>
         </div>
-        <div class="card">
-          <h3>📦 Productos restantes</h3>
-          <div class="barra"><span style="--valor: 30%"></span></div>
-          <p class="barra-info">30% disponibles (150 de 500)</p>
-        </div>
-        <div class="card">
-          <h3>💰 Ganancias</h3>
-          <div class="barra"><span style="--valor: 85%"></span></div>
-          <p class="barra-info">$8,500 de $10,000</p>
-        </div>
-      </div>
-      <div class="productos-grid">
-        <div class="product-card">
-          <img src="../../img/artesania1.jpeg" alt="Producto 1" />
-          <h4>Hamburguesa Clásica</h4>
-          <p>Vendidas: 150</p>
-        </div>
-        <div class="product-card">
-          <img src="../../img/artesania2.jpg" alt="Producto 2" />
-          <h4>Papas Fritas</h4>
-          <p>Vendidas: 120</p>
-        </div>
-        <div class="product-card">
-          <img src="../../img/artesania3.jpeg" alt="Producto 3" />
-          <h4>Refresco</h4>
-          <p>Vendidas: 200</p>
-        </div>
-      </div>
-    </section>
-  </main>
-  <script src="../../js/scriptSocio.js"></script>
+        <button class="menu-btn" id="menuToggle">&#9776;</button>
+        <button onclick="window.location.href='../../index.html'" class="logout-btn">Cerrar sesión</button>
+    </header>
+    <main>
+        <aside class="user-panel">
+            <img src="../../img/user1.jpg" alt="Usuario" class="user-icon" />
+            <p>Nombre del Usuario: </p>
+            <p>Correo: </p>
+            <p>Contraseña: </p>
+        </aside>
+        <section class="dashboard">
+            <div class="dashboard-top">
+                <div class="card">
+                    <h3>Productos vendidos</h3>
+                    <div class="barra"><span style="--valor: 70%"></span></div>
+                    <p class="barra-info">70% vendidos (350 de 500)</p>
+                </div>
+                <div class="card">
+                    <h3>Productos Más Vendidos</h3>
+                    <div class="bar-chart productos">
+                        <div class="bar" style="--height: 90%" title="Sombreros"><span>Sombreros</span>
+                        </div>
+                        <div class="bar" style="--height: 75%" title="Trajes tipicos"><span>T.Tipicos</span></div>
+                        <div class="bar" style="--height: 60%" title="Collares"><span>Collares</span></div>
+                        <div class="bar" style="--height: 50%" title="Cestas"><span>Cestas</span></div>
+                        <div class="bar" style="--height: 30%" title="Jarrones"><span>Jarrones</span></div>
+                        <div class="bar" style="--height: 40%" title="Sandalias"><span>Sandalias</span></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Gráfica de Ganancias Mensuales</h3>
+                    <div class="bar-chart">
+                        <div class="bar" style="--height: 70%" title="Enero: $7,000"><span>Ene</span></div>
+                        <div class="bar" style="--height: 55%" title="Febrero: $5,500"><span>Feb</span></div>
+                        <div class="bar" style="--height: 80%" title="Marzo: $8,000"><span>Mar</span></div>
+                        <div class="bar" style="--height: 60%" title="Abril: $6,000"><span>Abr</span></div>
+                        <div class="bar" style="--height: 85%" title="Mayo: $8,500"><span>May</span></div>
+                        <div class="bar" style="--height: 40%" title="Junio: $4,000"><span>Jun</span></div>
+                        <div class="bar" style="--height: 90%" title="Julio: $9,000"><span>Jul</span></div>
+                        <div class="bar" style="--height: 65%" title="Agosto: $6,500"><span>Ago</span></div>
+                        <div class="bar" style="--height: 75%" title="Septiembre: $7,500"><span>Sep</span></div>
+                        <div class="bar" style="--height: 50%" title="Octubre: $5,000"><span>Oct</span></div>
+                        <div class="bar" style="--height: 78%" title="Noviembre: $7,800"><span>Nov</span></div>
+                        <div class="bar" style="--height: 95%" title="Diciembre: $9,500"><span>Dic</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="productos-grid">
+                <div class="product-card">
+                    <img src="../../img/artesania1.jpeg" alt="Producto">
+                    <h4>Miel</h4>
+                    <p class="precio">$50</p>
+                    <p>Este producto está hecho con ingredientes frescos y es ideal para
+                        cualquier ocasión.</p>
+                </div>
+                <div class="product-card">
+                    <img src="../../img/penacho.jpeg" alt="Producto">
+                    <h4>Penacho de Moctezuma</h4>
+                    <p class="precio">$999999999999999</p>
+                    <p>Una pieza original e invaluable firmada por el mismisimo Moctezuma.</p>
+                </div>
+                <div class="product-card">
+                    <img src="../../img/artesania2.jpg" alt="Producto">
+                    <h4>Hamaca</h4>
+                    <p class="precio">$100</p>
+                    <p>Para planchar oreja como Dios manda</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../../js/scriptSocio.js"></script>
 </body>
+
 </html>
