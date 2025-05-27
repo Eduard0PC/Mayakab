@@ -199,6 +199,7 @@ main {
 .dashboard-top {
     display: flex;
     gap: 20px;
+    margin-top: 25px;
     margin-bottom: 30px;
     flex-wrap: wrap;
 }
