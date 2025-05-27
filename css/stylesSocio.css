@@ -183,8 +183,10 @@ main {
     transform: scale(1.01);
     cursor: pointer;
 }
+
 #userForm {
-    margin-top: 10px;;
+    margin-top: 10px;
+    ;
 }
 
 
@@ -382,6 +384,7 @@ main {
     color: #147500;
     font-weight: bold;
 }
+
 .product-card p {
     font-size: 13px;
     color: #5e5e5e;
@@ -420,7 +423,8 @@ main {
     main {
         margin-left: 0;
     }
-        .logo-container {
+
+    .logo-container {
         margin-left: 0;
     }
 
@@ -429,53 +433,11 @@ main {
     }
 
     .dashboard {
-        padding: 20px 15px;
+        padding: 10px 15px;
     }
 
     .dashboard-top {
         flex-direction: column;
         gap: 15px;
-    }
-
-    .card {
-        min-width: 100%;
-    }
-
-    .productos-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-pic-container,
-    .user-panel .user-icon {
-        width: 140px;
-        height: 140px;
-    }
-
-    .edit-overlay {
-        width: 140px;
-        height: 140px;
-    }
-
-    .user-info-card form {
-        width: 100%;
-    }
-
-    .product-card .image-container {
-        height: 120px;
-    }
-
-    .bar-chart.vendidos {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .bar-chart.vendidos .bar {
-        width: 100% !important;
-        margin-bottom: 10px;
-    }
-
-    .bar-chart.vendidos .bar span {
-        right: 5px;
-        top: 50%;
     }
 }
