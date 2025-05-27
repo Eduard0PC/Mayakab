@@ -19,26 +19,40 @@
     </header>
     <main>
         <aside class="user-panel">
-            <img src="../../img/user1.jpg" alt="Usuario" class="user-icon" />
+            <div class="profile-pic-container">
+                <img src="../../img/user1.jpg" alt="Usuario" class="user-icon" id="profileImage" />
+                <div class="edit-overlay" id="editOverlay">Editar</div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" />
+            </div>
             <div class="user-info-card">
                 <h4>Información del Usuario</h4>
-                <p><strong>Nombre:</strong> Juan Pérez</p>
-                <p><strong>Correo:</strong> juan@example.com</p>
-                <p><strong>Contraseña:</strong> ********</p>
+                <form id="userForm">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="Pepe Perez" required />
+
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" value="pepe@mayakab.com" required />
+
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" value="********" required />
+
+                    <button type="submit">Guardar cambios</button>
+                </form>
             </div>
+
         </aside>
         <section class="dashboard">
             <div class="dashboard-top">
                 <div class="card">
                     <h3>Productos vendidos</h3>
-                    <div class="barra"><span style="--valor: 70%"></span></div>
-                    <p class="barra-info">70% vendidos (350 de 500)</p>
+                    <div class="bar-chart vendidos">
+                        <div class="bar" style="--width: 70%;"><span>70% Vendido</span></div>
+                    </div>
                 </div>
                 <div class="card">
                     <h3>Productos Más Vendidos</h3>
                     <div class="bar-chart productos">
-                        <div class="bar" style="--height: 90%" title="Sombreros"><span>Sombreros</span>
-                        </div>
+                        <div class="bar" style="--height: 90%" title="Sombreros"><span>Sombreros</span></div>
                         <div class="bar" style="--height: 75%" title="Trajes tipicos"><span>T.Tipicos</span></div>
                         <div class="bar" style="--height: 60%" title="Collares"><span>Collares</span></div>
                         <div class="bar" style="--height: 50%" title="Cestas"><span>Cestas</span></div>
@@ -65,26 +79,27 @@
                 </div>
             </div>
             <div class="productos-grid">
-                <div class="product-card">
-                    <img src="../../img/artesania1.jpeg" alt="Producto">
-                    <h4>Miel</h4>
-                    <p class="precio">$50</p>
-                    <p>Este producto está hecho con ingredientes frescos y es ideal para
-                        cualquier ocasión.</p>
+                <div class="productos-grid">
+                    <div class="product-card scroll-animate">
+                        <img src="../../img/artesania1.jpeg" alt="Producto">
+                        <h4>Miel</h4>
+                        <p class="precio">$50</p>
+                        <p>Este producto está hecho con ingredientes frescos y es ideal para cualquier ocasión.</p>
+                    </div>
+                    <div class="product-card scroll-animate">
+                        <img src="../../img/penacho.jpeg" alt="Producto">
+                        <h4>Penacho de Moctezuma</h4>
+                        <p class="precio">$999999999999999</p>
+                        <p>Una pieza original e invaluable firmada por el mismisimo Moctezuma.</p>
+                    </div>
+                    <div class="product-card scroll-animate">
+                        <img src="../../img/artesania2.jpg" alt="Producto">
+                        <h4>Hamaca</h4>
+                        <p class="precio">$100</p>
+                        <p>Para planchar oreja como Dios manda</p>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <img src="../../img/penacho.jpeg" alt="Producto">
-                    <h4>Penacho de Moctezuma</h4>
-                    <p class="precio">$999999999999999</p>
-                    <p>Una pieza original e invaluable firmada por el mismisimo Moctezuma.</p>
-                </div>
-                <div class="product-card">
-                    <img src="../../img/artesania2.jpg" alt="Producto">
-                    <h4>Hamaca</h4>
-                    <p class="precio">$100</p>
-                    <p>Para planchar oreja como Dios manda</p>
-                </div>
-            </div>
+
         </section>
     </main>
     <script src="../../js/scriptSocio.js"></script>

@@ -18,7 +18,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 85px; 
+  height: 77px; 
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
@@ -29,22 +29,22 @@ header {
 }
 
 .logo {
-  width: 55px;
+  width: 50px;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 95px;
+  margin-left: 65px;
 }
 
 .logo-text {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
   font-weight: bold;
-  margin-left: 10px;
+  margin-left: 9px;
 }
 
 .menu-btn {
@@ -75,18 +75,18 @@ header {
 main {
   display: flex;
   min-height: calc(100vh - 70px);
-  margin-top: 85px;    
+  margin-top: 77px;    
   margin-left: 250px;  
 }
 
 /* PANEL DE USUARIO */
 .user-panel {
   position: fixed;
-  top: 85px;
+  top: 77px;
   left: 0;
   bottom: 0;
   width: 250px;
-  background-color: #ffffff;
+  background-color: #d8cebd;
   padding: 30px 20px;
   border-right: 1px solid #e0e0e0;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
@@ -107,28 +107,85 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.user-info-card h4 {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 10px;
-  text-align: center;
+/* editor de imagen */
+.profile-pic-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
-.user-info-card p {
-  font-size: 15px;
-  color: #555;
-  margin: 15px 0;
+.edit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 5px;
-  word-break: break-word;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
-.user-info-card p::before {
-  content: "•";
-  font-weight: bold;
-  color: #4caf50;
+.profile-pic-container:hover .edit-overlay {
+  opacity: 1;
 }
+
+/* Editar datos */
+.user-info-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-info-card label {
+    font-weight: bold;
+    color: #333;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+.user-info-card input {
+    border: none;
+    border-bottom: 1.5px solid #e2dcd0;
+    padding: 6px 4px;
+    font-size: 13px;
+    background: transparent;
+    transition: border-color 0.2s ease;
+}
+
+.user-info-card input:focus {
+    outline: none;
+    border-bottom: 1.5px solid #ffa500;
+}
+
+.user-info-card button {
+    padding: 8px 14px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    margin-top: 8px;
+    align-self: flex-start;
+}
+
+.user-info-card button:hover {
+    background-color: #218838;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+
 
 
 /* DASHBOARD */
@@ -166,36 +223,6 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.barra {
-  width: 100%;
-  height: 14px;
-  background: #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 12px;
-}
-
-.barra span {
-  display: block;
-  height: 100%;
-  background-color: #4caf50;
-  width: 0%;
-  animation: crecer 2s forwards;
-  border-radius: 10px;
-}
-
-@keyframes crecer {
-  from { width: 0%; }
-  to { width: var(--valor); }
-}
-
-.barra-info {
-  font-size: 14px;
-  color: #444;
-  font-weight: 500;
-  margin-top: -5px;
 }
 
 .bar-chart {
@@ -249,6 +276,34 @@ main {
   margin-top: 6px;
 }
 
+.bar-chart.vendidos {
+    display: flex;
+    align-items: center;
+    height: 150px; /* ajusta según lo necesario */
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.bar-chart.vendidos .bar {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 8px;
+    width: var(--width); 
+    position: relative;
+    animation: growBar2 1s ease forwards;
+}
+
+.bar-chart.vendidos .bar span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+}
 
 @keyframes growBar {
   to {
@@ -256,6 +311,14 @@ main {
   }
 }
 
+@keyframes growBar2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--width);
+  }
+}
 /* PRODUCTOS */
 .productos-grid {
   display: grid;
@@ -297,6 +360,19 @@ main {
   font-size: 13px;
   color: #666;
   margin-bottom: 6px;
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 @media (max-width: 768px) {
