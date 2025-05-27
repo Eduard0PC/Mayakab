@@ -18,7 +18,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 70px; 
+  height: 85px; 
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
@@ -29,22 +29,22 @@ header {
 }
 
 .logo {
-  width: 50px;
+  width: 55px;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 90px;
+  margin-left: 95px;
 }
 
 .logo-text {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: #333;
   font-weight: bold;
-
+  margin-left: 10px;
 }
 
 .menu-btn {
@@ -75,41 +75,61 @@ header {
 main {
   display: flex;
   min-height: calc(100vh - 70px);
-  margin-top: 70px;    
+  margin-top: 85px;    
   margin-left: 250px;  
 }
 
 /* PANEL DE USUARIO */
 .user-panel {
   position: fixed;
-  top: 70px; 
+  top: 85px;
   left: 0;
   bottom: 0;
   width: 250px;
   background-color: #ffffff;
   padding: 30px 20px;
   border-right: 1px solid #e0e0e0;
-  text-align: center;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
   overflow-y: auto;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.user-icon {
-  width: 100px;
-  height: 100px;
+.user-panel .user-icon {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ffa500, #ff8c00);
-  margin-bottom: 20px;
   object-fit: cover;
-  border: 2px solid #ccc;
+  margin-bottom: 20px;
+  border: 3px solid #ffa500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.user-panel p {
-  margin: 8px 0;
-  font-size: 14px;
-  color: #555;
+.user-info-card h4 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
 }
+
+.user-info-card p {
+  font-size: 15px;
+  color: #555;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  word-break: break-word;
+}
+
+.user-info-card p::before {
+  content: "•";
+  font-weight: bold;
+  color: #4caf50;
+}
+
 
 /* DASHBOARD */
 .dashboard {
