@@ -434,10 +434,12 @@ main {
 
     .dashboard {
         padding: 10px 15px;
+        width: 10%;
+        box-sizing: border-box;
     }
 
     .dashboard-top {
-        flex-direction: column;
-        gap: 15px;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
