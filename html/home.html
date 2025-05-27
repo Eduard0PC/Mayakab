@@ -14,29 +14,140 @@
 
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="../css/estilos.css">
+<style>
+    
+.navbar-brand img {
+    margin-right: 10px;
+}
 
+.bg-dark {
+    background-color: #cc722e91!important;
+}
+.list-group-item {
+    background-color: #f8f9fa;
+    border: none;
+    font-size: 1.1rem;
+}
+/* Transición para ocultar navbar y barra informativa */
+.navbar, .info-bar {
+  transition: top 0.4s;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+
+/* Galería: efecto hover sutil */
+.galeria-item {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.05);
+}
+.badge.bg-primary {
+  background-color: #632D41 !important; /* color de tu empresa */
+}
+
+.card {
+  border: 2px solid #000000;
+  border-radius: 10px;
+}
+
+
+
+.bg-imagenes {
+  background-color: #a7a7a700; /* otro tono gris */
+}
+
+.fondo-noticias {
+  background-color: #ffffff; /* Fondo lila suave */
+  width: 100%;
+}
+
+.fondo-productos {
+  background-color:#632d41; /* Fondo arena claro */
+  color: wheat;
+  width: 100%;
+}
+
+.bg-eventos, .bg-imagenes {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+/* Noticias - estilo vintage */
+.noticia .card-body {
+  background-color: #f2fdf0; /* Fondo claro vintage */
+  color: #000000; /* Café oscuro */
+  border-left: 6px solid #77d787;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Botón de noticias */
+.noticia .btn-outline-success {
+  border-color: #238e3e;
+  color: #3c8e23;
+}
+.noticia .btn-outline-success:hover {
+  background-color: #632D41;
+  color: #fff;
+}
+
+/* Eventos - estilo vintage */
+.bg-eventos .list-group-item {
+  background-color: #e2af8870; /* Fondo neutro suave */
+  color: #000000;
+  border-left: 4px solid #d7b377;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* Fecha del evento (badge) */
+.bg-eventos .badge {
+  background-color: #00ff00;
+  color: #fff;
+}
+</style>
 </head>
 
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top bg-white">
   <div class="container">
     <a class="navbar-brand fw-bold text-uppercase" href="#">
       <img src="../img/logo.png" alt="Maya Kab" width="50"> Maya Kab
     </a>
-    <div class="collapse navbar-collapse">
+
+    <!-- Botón hamburguesa -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+      aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú colapsable -->
+    <div class="collapse navbar-collapse" id="menuNav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" href="home.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link " href="tienda.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
         <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
         <li class="nav-item"><a class="nav-link" href="sobre_nosotros.html">Sobre nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="concactenos.html">Contactenos</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactenos.html">Contactenos</a></li>
       </ul>
     </div>
   </div>
 </nav>
-
 
   <!-- Banner Principal -->
   <div class="container-fluid bg-dark text-white py-5" data-aos="fade-up">

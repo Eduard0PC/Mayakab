@@ -1,7 +1,7 @@
 // Lista de usuarios predeterminados con roles
 let usuarios = [
-    { usuario: "Angeles Olvera", contrasena: "1234", rol: "usuario" },
-    { usuario: "Rodrigo Chi", contrasena: "1234", rol: "socio" }
+    { usuario: "Angeles Olvera", contrasena: "1234", rol: "socio" },
+    { usuario: "Rodrigo Chi", contrasena: "1234", rol: "usuario" }
 ];
 
 const container = document.querySelector('.container');
