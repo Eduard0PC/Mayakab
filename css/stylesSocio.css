@@ -409,9 +409,8 @@ main {
 
     .user-panel {
         position: fixed;
-        left: -400px;
+        left: -250px;
         transition: left 0.3s ease;
-        width: 150vw; 
     }
 
     .user-panel.active {
