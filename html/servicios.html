@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios | Maya Kab</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <style>
+    body {
+      background-color: #F4F1EA;
+      color: #000;
+    }
+
+    .navbar {
+      background-color: #fff;
+    }
+
+    .card {
+      background-color: #fff8f0;
+      border: 1px solid #d7ccc8;
+    }
+
+    /* Transición y hover para tarjetas */
+    .service-card {
+      transition: transform 0.4s ease, opacity 0.6s ease;
+    }
+
+    .service-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+    .service-card img{
+        height: 300px;
+    }
+
+    /* Aparecer al hacer scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Botón de detalles */
+    .btn-detalles {
+      margin-top: 15px;
+      background-color: #6d4c41;
+      color: white;
+      border: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn-detalles:hover {
+      background-color: #5d4037;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .card-title {
+      color: #6d4c41;
+    }
+
+    .quote-carousel {
+      background-color: #fff8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+
+    .carousel-item img {
+      max-height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .quote-text {
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-uppercase" href="#">
+        <img src="../img/logo.png" alt="Maya Kab" width="50"> Maya Kab
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link " href="home.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link " href="tienda.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link active" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre_nosotros.html">Sobre nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="concactenos.html">Contactenos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Servicios -->
+  <section class="container py-5">
+    <h2 class="text-center text-uppercase fw-bold mb-4" style="color: #5d4037;">Nuestros Servicios</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <div class="col fade-in">
+        <div class="card h-100 shadow-sm service-card">
+          <img src="../img/HaciendoHamaca.jpg" class="card-img-top" alt="Hamacas">
+          <div class="card-body text-center">
+            <h5 class="card-title">Elaboración de Hamacas</h5>
+            <a href="#" class="btn btn-detalles">Más detalles</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col fade-in">
+        <div class="card h-100 shadow-sm service-card">
+          <img src="../img/Haciendoterno.jpg" class="card-img-top" alt="Ternos">
+          <div class="card-body text-center">
+            <h5 class="card-title">Confección de Ternos</h5>
+            <a href="#" class="btn btn-detalles">Más detalles</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col fade-in">
+        <div class="card h-100 shadow-sm service-card">
+          <img src="../img/Haciendomadera.jpg" class="card-img-top" alt="Madera">
+          <div class="card-body text-center">
+            <h5 class="card-title">Tallado de Productos de Madera</h5>
+            <a href="#" class="btn btn-detalles">Más detalles</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Frases motivadoras -->
+  <section class="container py-5">
+    <h3 class="text-center fw-bold mb-4" style="color: #5d4037;">FRASES QUE INSPIRAN</h3>
+    <div id="quoteCarousel" class="carousel slide quote-carousel" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active text-center">
+          <img src="../img/p1.jpg" alt="Nelson Mandela">
+          <p class="quote-text mt-3">"Siempre parece imposible hasta que se hace."</p>
+          <small>- Nelson Mandela</small>
+        </div>
+        <div class="carousel-item text-center">
+          <img src="../img/p2.jpg" alt="Frida Kahlo">
+          <p class="quote-text mt-3">"Pies, ¿para qué los quiero si tengo alas para volar?"</p>
+          <small>- Frida Kahlo</small>
+        </div>
+        <div class="carousel-item text-center">
+          <img src="../img/p3.jpg" alt="Mahatma Gandhi">
+          <p class="quote-text mt-3">"Tú debes ser el cambio que deseas ver en el mundo."</p>
+          <small>- Mahatma Gandhi</small>
+        </div>
+        <div class="carousel-item text-center">
+          <img src="../img/p4.jpg" alt="Mahatma Gandhi">
+          <p class="quote-text mt-3">"Tú debes ser el cambio que deseas ver en el mundo."</p>
+          <small>- Mahatma Gandhi</small>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#quoteCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#quoteCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+
+</html>
