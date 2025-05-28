@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito | Maya Kab</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/estilos.css">
+
+  <style>
+    body {
+      background: linear-gradient(to right, #f7f3f9, #f2f6ff);
+    }
+
+    .card {
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: 15px;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-outline-secondary  {
+      background-color: #662952;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .btn-outline-secondary :hover {
+      background-color: #1e4a27;
+      color: #f2f6ff;
+    }
+
+    .btn-vaciar {
+      background-color: #c0392b;
+      border: none;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .btn-vaciar:hover {
+      background-color: #922b21;
+    }
+
+       .btn-historial {
+      background-color: #2b41c0;
+      border: none;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .btn-historial:hover {
+      background-color: #3f2192;
+       color: white;
+    }
+
+
+    h2 {
+      color: #000000;
+      font-weight: bold;
+    }
+
+    .card-title {
+      color: #221964;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #000000 !important;
+
+
+    }
+
+        .btn-compra {
+      background-color: rgb(9, 105, 17);
+      color: white;
+    }
+    .btn-compra:hover {
+      background-color: #06b91e;
+      color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+ <nav class="navbar navbar-expand-lg shadow-sm fixed-top bg-white">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-uppercase" href="#">
+      <img src="../img/logo.png" alt="Maya Kab" width="50"> Maya Kab
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+      aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú colapsable -->
+    <div class="collapse navbar-collapse" id="menuNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link " href="home.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tienda.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre_nosotros.html">Sobre nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactenos.html">Contactenos</a></li>
+        <li class="nav-item">
+        <a class="nav-link position-relative" href="carrito.html">
+            <img src="../img/carrito.svg" alt="Carrito" width="20" class="me-1" />
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </a>
+</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5 pt-5">
+  <h2 class="mb-4">🛒 Tu carrito</h2>
+  <a href="tienda.html" class="btn btn-outline-secondary mb-4">← Seguir comprando</a>
+  <div id="carrito-contenido"></div>
+  <div class="d-flex justify-content-between align-items-center mt-4">
+    <h4>Total: $<span id="total-carrito">0</span></h4>
+    <div>
+      <button class="btn btn-danger me-2" onclick="vaciarCarrito()">Vaciar carrito</button>
+      <button class="btn btn-compra" data-bs-toggle="modal" data-bs-target="#formularioCompra">Comprar</button>
+       <a href="historial.html" class="btn btn-historial ">Ver Historial de Compras</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Formulario de Compra -->
+<div class="modal fade" id="formularioCompra" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Formulario de Envío</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="form-compra">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" required>
+          </div>
+          <div class="mb-3">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" id="telefono" required>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-outline-info" onclick="mostrarPoliticas()">Políticas de envío</button>
+            <button type="submit" class="btn btn-success">Enviar pedido</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function mostrarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const contenedor = document.getElementById('carrito-contenido');
+    contenedor.innerHTML = '';
+
+    if (carrito.length === 0) {
+      contenedor.innerHTML = '<p class="text-muted">Tu carrito está vacío.</p>';
+      document.getElementById('total-carrito').textContent = '0';
+      actualizarContador();
+      return;
+    }
+
+    let total = 0;
+    carrito.forEach((producto, index) => {
+      total += parseFloat(producto.precio);
+      contenedor.innerHTML += `
+        <div class="card mb-3 shadow-sm">
+          <div class="row g-0">
+            <div class="col-md-3">
+              <img src="${producto.imagen}" class="img-fluid rounded-start" alt="${producto.nombre}">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">${producto.nombre}</h5>
+                <p class="text-muted">Precio: $${producto.precio}</p>
+              </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-center justify-content-center">
+              <button class="btn btn-outline-danger" onclick="eliminarProducto(${index})">Eliminar</button>
+            </div>
+          </div>
+        </div>`;
+    });
+    document.getElementById('total-carrito').textContent = total;
+    actualizarContador();
+  }
+
+  function eliminarProducto(indice) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.splice(indice, 1);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    mostrarCarrito();
+  }
+
+  function vaciarCarrito() {
+    if (confirm('¿Seguro que quieres vaciar el carrito?')) {
+      localStorage.removeItem('carrito');
+      mostrarCarrito();
+    }
+  }
+
+  function actualizarContador() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    document.getElementById('cart-count').textContent = carrito.length;
+  }
+
+  function mostrarPoliticas() {
+    alert("Las políticas de envío incluyen: tiempos estimados de entrega, responsabilidad del cliente por dirección incorrecta, devoluciones solo en productos dañados. Gracias por tu compra.");
+  }
+
+  document.getElementById("form-compra").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const compras = JSON.parse(localStorage.getItem('compras')) || [];
+
+    // Guardar datos de compra
+    const datos = {
+      nombre: document.getElementById('nombre').value,
+      apellido: document.getElementById('apellido').value,
+      direccion: document.getElementById('direccion').value,
+      email: document.getElementById('email').value,
+      telefono: document.getElementById('telefono').value,
+      productos: carrito,
+      fecha: new Date().toLocaleString()
+    };
+    compras.push(datos);
+    localStorage.setItem('compras', JSON.stringify(compras));
+
+    // Simular envío y limpiar carrito
+    alert("Gracias por tu compra. Se ha enviado tu pedido por correo electrónico (simulado)." );
+    localStorage.removeItem('carrito');
+    mostrarCarrito();
+    actualizarContador();
+    document.getElementById("form-compra").reset();
+    const modal = bootstrap.Modal.getInstance(document.getElementById('formularioCompra'));
+    modal.hide();
+  });
+
+  mostrarCarrito();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

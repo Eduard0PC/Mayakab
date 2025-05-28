@@ -95,10 +95,18 @@
         <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
         <li class="nav-item"><a class="nav-link" href="sobre_nosotros.html">Sobre nosotros</a></li>
         <li class="nav-item"><a class="nav-link" href="contactenos.html">Contactenos</a></li>
+        <li class="nav-item">
+<a class="nav-link position-relative" href="carrito.html">
+            <img src="../img/carrito.svg" alt="Carrito" width="20" class="me-1" />
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </a>
+</li>
       </ul>
     </div>
   </div>
 </nav>
+
+
   <!-- Sección de búsqueda -->
   <section class="container">
     <div class="search-bar">
@@ -113,19 +121,21 @@
 
       <!-- Producto 1 -->
       <div class="col fade-in-section">
+        <a href="producto.html?nombre=Miel&precio=200&cantidad=12&creador=Juana%20Lopez&imagen=../img/miel.jpeg" class="text-decoration-none text-dark">
         <div class="product-item ">
         <div class="card h-100 shadow-sm">
           <div style="overflow: hidden;">
             <img src="../img/miel.jpeg" class="card-img-top product-img" alt="Cerámica">
           </div>
           <div class="card-body">
-            <h5 class="card-title">Jarrón de Cerámica</h5>
+            <h5 class="card-title">Miel</h5>
             <p class="card-text mb-1">Precio: $200</p>
             <p class="card-text mb-1">Cantidad: 12 disponibles</p>
-            <small>Creado por: Juana Xul</small>
+            <small>Creado por: Juana Lopez</small>
           </div>
         </div>
       </div>
+      </a>
 </div>
       <!-- Producto 2 -->
       <div class="col product-item fade-in-section">
@@ -275,6 +285,14 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function actualizarContador() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    document.getElementById('cart-count').textContent = carrito.length;
+  }
+
+  actualizarContador();
+</script>
 </body>
 
 </html>
