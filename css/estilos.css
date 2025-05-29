@@ -3,107 +3,16 @@
 
 body {
     font-family: 'poppins', sans-serif;
+    
 }
-
-.navbar-brand img {
-    margin-right: 10px;
-}
-
-.bg-dark {
-    background-color: #cc722e91!important;
-}
-.list-group-item {
-    background-color: #f8f9fa;
-    border: none;
-    font-size: 1.1rem;
-}
-/* Transición para ocultar navbar y barra informativa */
-.navbar, .info-bar {
-  transition: top 0.4s;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-
-/* Galería: efecto hover sutil */
-.galeria-item {
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.galeria-item img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.galeria-item:hover img {
-  transform: scale(1.05);
-}
-.badge.bg-primary {
-  background-color: #632D41 !important; /* color de tu empresa */
-}
-
-.card {
-  border: 2px solid #000000;
-  border-radius: 10px;
-}
-
-
-
-.bg-imagenes {
-  background-color: #a7a7a700; /* otro tono gris */
-}
-
-.fondo-noticias {
-  background-color: #ffffff; /* Fondo lila suave */
-  width: 100%;
-}
-
-.fondo-productos {
-  background-color:#632d41; /* Fondo arena claro */
-  color: wheat;
-  width: 100%;
-}
-
-.bg-eventos, .bg-imagenes {
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 1rem;
-  padding: 2rem;
-}
-
-/* Noticias - estilo vintage */
-.noticia .card-body {
-  background-color: #f2fdf0; /* Fondo claro vintage */
-  color: #000000; /* Café oscuro */
-  border-left: 6px solid #77d787;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-/* Botón de noticias */
-.noticia .btn-outline-success {
-  border-color: #238e3e;
-  color: #3c8e23;
-}
-.noticia .btn-outline-success:hover {
-  background-color: #632D41;
+.btn-guinda {
+  background-color: #800020;
+  border-color: #800020;
   color: #fff;
 }
 
-/* Eventos - estilo vintage */
-.bg-eventos .list-group-item {
-  background-color: #e2af8870; /* Fondo neutro suave */
-  color: #000000;
-  border-left: 4px solid #d7b377;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-/* Fecha del evento (badge) */
-.bg-eventos .badge {
-  background-color: #00ff00;
+.btn-guinda:hover {
+  background-color: #A52A2A;
+  border-color: #A52A2A;
   color: #fff;
 }
